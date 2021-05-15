@@ -515,10 +515,6 @@ h2 {
   margin: 0 auto;
 }
 
-.header__top.header-top {
-  margin-bottom: 150px;
-}
-
 .header__logo {
   z-index: 20;
   max-width: 196px;
@@ -1859,6 +1855,10 @@ h2 {
   font-size: 21px;
 }
 
+.pages-title {
+  margin-top: 260px;
+}
+
 .anti-spam__main-top {
   border-bottom: 1px solid #E9E9E9;
   padding-bottom: 38px;
@@ -1925,12 +1925,13 @@ h2 {
 
 .pricing {
   background-color: #FDFAF8;
-  padding: 35px 0 180px;
+  padding: 300px 0 180px;
 }
 
 .pricing__header {
   background-image: none;
   background-color: #FDFAF8;
+  padding: 0;
 }
 
 .pricing__inner {

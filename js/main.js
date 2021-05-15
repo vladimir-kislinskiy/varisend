@@ -57,15 +57,17 @@ $(function () {
 	}
 
 	// Scroll to anchors
-	// $('a[href*="#"]').on('click', function (e) {
-	// 	let $page = $('html, body');
-	// 	if ($(this).attr('href').indexOf('#') === 0) {
-	// 		e.preventDefault();
-	// 		$page.animate({
-	// 			scrollTop: $($.attr(this, 'href')).offset().top - 103
-	// 		}, 1000);
-	// 	}
-	// });
+	$('a[href*="#"]').on('click', function (e) {
+		if ($(this).attr('href').indexOf('#') === 0) {
+			let this_href = $(this).attr('href');
+			e.preventDefault();
+			if (this_href.length > 1 && $(this_href).length) {
+				$('html, body').animate({
+					scrollTop: $(this_href).offset().top - 103
+				}, 1000);
+			}
+		}
+	});
 
 	// Slider
 	if ($('.suitable__slider').length) {
