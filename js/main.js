@@ -39,7 +39,6 @@ $(function () {
 
 			$('.header__menu-toggle').toggleClass('open');
 
-
 		});
 
 		menu.on('click', function (e) {
@@ -170,21 +169,25 @@ $(function () {
 		const swiper1 = new Swiper('.pricing__yearly',
 			{
 				loop: true,
-				spaceBetween: 30,
 				slidesPerView: 1,
+				spaceBetween: 15,
 				pagination: {
 					el: '.swiper-pagination1',
 					clickable: true,
 				},
 
 				breakpoints: {
-					700: {
+					450: {
 						slidesPerView: 1.5,
-						spaceBetween: 40,
+						spaceBetween: 15,
+					},
+					600: {
+						slidesPerView: 2,
+						spaceBetween: 30,
 					},
 					900: {
 						slidesPerView: 3,
-						spaceBetween: 20,
+						spaceBetween: 40,
 					},
 					1450: {
 						slidesPerView: 4,
