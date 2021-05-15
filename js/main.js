@@ -2,7 +2,7 @@
 $(function () {
 	'use strict';
 
-	// Scroll functions
+	// Sticky header
 	$(window).on('scroll', function () {
 
 		if ($(this).scrollTop() > 0) {
@@ -15,6 +15,7 @@ $(function () {
 
 	});
 
+	// Scroll up button
 	$('.scrollup').on('click', function (e) {
 		e.preventDefault();
 		$('body,html').animate({ scrollTop: 0 }, 1000);
@@ -24,8 +25,8 @@ $(function () {
 	if ($('.header').length) {
 		let burgerWrap = $('.header__burger-wrap');
 		let burger = $('.header__burger');
-		let menu = $('.header__top-inner');
-		let menuLink = $('.header__top-inner a');
+		let menu = $('.header-popup ');
+		let menuLink = $('.header-popup a');
 		let header = $('.header');
 		let innerBtn = $('.header__burger-inner a');
 
@@ -63,7 +64,7 @@ $(function () {
 			e.preventDefault();
 			if (this_href.length > 1 && $(this_href).length) {
 				$('html, body').animate({
-					scrollTop: $(this_href).offset().top - 103
+					scrollTop: $(this_href).offset().top - 100
 				}, 1000);
 			}
 		}

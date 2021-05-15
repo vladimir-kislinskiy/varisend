@@ -9,10 +9,6 @@
 }
 
 @media only screen and (max-height: 899px) {
-  .header {
-    padding: 0 0 20px 0;
-    min-height: 100vh;
-  }
   .header__sticky-wrap {
     padding: 25px 0;
   }
@@ -42,7 +38,7 @@
     border-radius: 0 75px 0 0;
   }
   .sign-popup__form-wrap {
-    padding-top: 30px;
+    padding: 30px 30px 0;
   }
   .sign-popup__logo span {
     font-size: 18px;
@@ -59,7 +55,19 @@
   }
 }
 
+@media only screen and (max-height: 700px) {
+  .pages-header {
+    padding: 100px 0 30px;
+  }
+  .arrow-down {
+    margin-top: 50px;
+  }
+}
+
 @media only screen and (max-width: 1200px) {
+  .pages-header {
+    padding-top: 150px;
+  }
   .header__main-right {
     grid-template-columns: repeat(3, 150px);
     grid-template-rows: repeat(4, 150px);
@@ -71,9 +79,6 @@
   .connect__inner h2,
   .testimonials__inner h2 {
     margin-bottom: 20px;
-  }
-  .header {
-    padding-bottom: 50px;
   }
   .header__main {
     padding-top: 120px;
@@ -110,10 +115,10 @@
     display: none;
   }
   .pricing__plan-slider {
-    padding: 0 30px;
+    padding: 0 15px;
   }
   .pricing {
-    padding: 0 0 40px;
+    padding: 100px 0 40px;
   }
   .pricing__inner {
     margin-bottom: 40px;
@@ -160,32 +165,6 @@
   .header__menu-pc,
   .header__buttons-pc {
     display: none;
-  }
-  .header__top-inner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    z-index: 10;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto -webkit-max-content;
-    grid-template-rows: auto max-content;
-    grid-row-gap: 30px;
-    max-width: none;
-    opacity: 0;
-    transform: translateY(150%);
-    pointer-events: none;
-    transition: opacity .5s, transform .5s linear;
-    overflow-y: auto;
-    align-items: center;
-  }
-  .header__top-inner.is-show {
-    opacity: 1;
-    transform: translateY(0%);
-    pointer-events: all;
   }
   .header__menu-list {
     grid-template-columns: 1fr;
@@ -328,6 +307,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .header__top-inner {
+    height: auto;
+  }
   .header__main {
     grid-template-columns: 1fr;
     grid-row-gap: 50px;
@@ -347,12 +329,19 @@
   .anti-spam__main {
     padding: 50px 0;
   }
+  .pricing__inner h3 {
+    font-size: 35px;
+    line-height: 40px;
+  }
+  .pages-header {
+    padding: 110px 0 30px;
+  }
+  .arrow-down {
+    margin-top: 30px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
-  .header__logo {
-    max-width: 180px;
-  }
   .header__top-inner {
     padding-top: 100px;
   }
@@ -420,5 +409,11 @@
   }
   .sign-popup__label {
     align-self: flex-start;
+  }
+  .pricing__inner p {
+    margin-bottom: 30px;
+  }
+  .header__menu-list {
+    grid-row-gap: 30px;
   }
 }
