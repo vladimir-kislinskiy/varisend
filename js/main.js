@@ -264,6 +264,15 @@ $(function () {
 			jQuery('.login-popup').addClass('is-show');
 		});
 
+		jQuery('.sign-popup__register-btn').on('click', function () {
+			jQuery('.login-popup').removeClass('is-show');
+			jQuery('.register-popup').addClass('is-show');
+		});
+
+		jQuery('.sign-popup__login-btn').on('click', function () {
+			jQuery('.register-popup').removeClass('is-show');
+			jQuery('.login-popup').addClass('is-show');
+		});
 	}
 });
 
