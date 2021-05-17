@@ -618,6 +618,7 @@ h2 {
   grid-template-columns: minmax(auto, 650px) auto;
   grid-column-gap: 87px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header__main-left {
