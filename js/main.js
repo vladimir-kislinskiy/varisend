@@ -170,7 +170,7 @@ $(function () {
 			{
 				loop: true,
 				slidesPerView: 1,
-				spaceBetween: 10,
+				spaceBetween: 15,
 				pagination: {
 					el: '.swiper-pagination1',
 					clickable: true,
@@ -253,29 +253,32 @@ $(function () {
 
 	// Validate email input
 	if ($('.sign-popup').length) {
+
 		function validateEmail(email) {
 			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			return re.test(email);
 		}
 
 		function validate() {
-			var $result = $("#result");
-			var email = $("#email-input").val();
+			var $result = $(this).next($(".sign-popup__input-result"));
+			var email = $(this).val();
 			$result.text("");
 
 			if (validateEmail(email)) {
 				$result.fadeOut('slow');
 				$result.text(" Is valid ");
 				$result.css("color", "green");
+				$(this).removeClass('is-wrong');
 			} else {
 				$result.fadeIn('slow');
 				$result.text(" Please enter a valid email address ");
 				$result.css("color", "#F15B29");
+				$(this).addClass('is-wrong');
 			}
 			return false;
 		}
 
-		$('#email-input').on('input', validate);
+		$('.email-input').on('input', validate);
 	}
 
 	// Login popups show

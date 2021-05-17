@@ -130,6 +130,13 @@ input[type=submit] {
   cursor: pointer;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #fff inset !important;
+}
+
 input,
 button,
 optgroup,
@@ -2372,7 +2379,6 @@ h2 {
 .sign-popup__form input {
   border-radius: 40px;
   padding: 15px 25px;
-  height: 53px;
 }
 
 .sign-popup__form input::-moz-placeholder {
@@ -2396,12 +2402,20 @@ h2 {
 .sign-popup__form input[type='text'],
 .sign-popup__form input[type='password'] {
   border: 1px solid #E7E7E7;
+  height: 53px;
+}
+
+.sign-popup__form input[type='text'].is-wrong,
+.sign-popup__form input[type='password'].is-wrong {
+  border: 1px solid #F15B29;
 }
 
 .sign-popup__form input[type='submit'] {
   background-color: #F15B29;
   border: none;
   color: #fff;
+  padding: 19px;
+  line-height: 21px;
 }
 
 .sign-popup__label {
@@ -2415,7 +2429,6 @@ h2 {
 
 .sign-popup__input-result {
   display: none;
-  text-align: center;
   font-size: 14px;
 }
 
@@ -2436,11 +2449,12 @@ h2 {
 }
 
 .sign-popup__bottom {
-  padding: 25px 69px 16px 69px;
+  padding: 17px 20px 17px 20px;
   margin-top: 60px;
   border-top: 1px solid #E6E6E6;
   width: 100%;
   font-size: 15px;
+  line-height: 38px;
   color: #130D0C;
   text-align: center;
 }
