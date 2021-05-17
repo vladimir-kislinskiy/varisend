@@ -181,7 +181,7 @@ body {
   font-weight: 500;
 }
 
-h2, .pre-title, .global-button a, .header__buttons, .header__buttons-pc, .header__main-left h1, .connect__item h5, .products__item span, .plugins__item span, .suitable__slider-item span, .testimonials__item-name span:nth-child(1), .footer__menu-item h6, .terms__main-list, .privacy__item-name, .anti-spam__main-items h5, .pricing__inner h3, .sign-popup__logo span {
+h2, .pre-title, .global-button a, .header__buttons, .header__buttons-pc, .header__main-left h1, .connect__item h5, .products__item span, .plugins__item span, .suitable__slider-item span, .testimonials__item-name span:nth-child(1), .footer__menu-item h6, .terms__main-list, .privacy__item-name, .anti-spam__main-items h5, .pricing__inner h3, .sign-popup__logo span, .sign-popup__form input[type='submit'] {
   font-family: 'DMSans-Bold', sans-serif;
   font-weight: 700;
 }
@@ -2077,6 +2077,7 @@ h2 {
   background-position: center center;
   background-size: auto;
   margin-top: -55px;
+  outline: none;
 }
 
 .pricing__plan-slider .swiper-button-next::after,
@@ -2331,7 +2332,7 @@ h2 {
   height: 14px;
   background-image: url(../images/icons/close.svg);
   background-position: center center;
-  background-size: auto;
+  background-size: cover;
   background-repeat: no-repeat;
   transition: transform 1s;
 }
@@ -2370,7 +2371,8 @@ h2 {
 
 .sign-popup__form input {
   border-radius: 40px;
-  padding: 17px 25px;
+  padding: 15px 25px;
+  height: 53px;
 }
 
 .sign-popup__form input::-moz-placeholder {
@@ -2394,7 +2396,6 @@ h2 {
 .sign-popup__form input[type='text'],
 .sign-popup__form input[type='password'] {
   border: 1px solid #E7E7E7;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.03);
 }
 
 .sign-popup__form input[type='submit'] {
@@ -2460,16 +2461,23 @@ h2 {
   width: 100%;
 }
 
-.sigh-popup__password-control1,
-.sigh-popup__password-control2 {
+.sign-popup__show-password {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: 20px;
-  display: flex;
   justify-content: center;
   align-items: center;
   width: 30px;
   height: 30px;
   cursor: pointer;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.sign-popup__show-password.is-show {
+  opacity: 1;
+  pointer-events: all;
 }

@@ -6,10 +6,10 @@ $(function () {
 	$(window).on('scroll', function () {
 
 		if ($(this).scrollTop() > 0) {
-			jQuery('.header__sticky-wrap').addClass('sticky');
+			$('.header__sticky-wrap').addClass('sticky');
 			$('.scrollup').removeClass('scrollup__hide');
 		} else {
-			jQuery('.header__sticky-wrap').removeClass('sticky');
+			$('.header__sticky-wrap').removeClass('sticky');
 			$('.scrollup').addClass('scrollup__hide');
 		};
 
@@ -108,7 +108,7 @@ $(function () {
 
 	// Animate objects on load
 	if ($('.header__main').length) {
-		jQuery(window).on('load', function () {
+		$(window).on('load', function () {
 			$('.header__right-item').addClass('animate');
 		});
 	}
@@ -137,7 +137,7 @@ $(function () {
 	}
 
 	// Devices animation
-	if (jQuery('.devices').length) {
+	if ($('.devices').length) {
 		$(window).on('scroll', function () {
 			$('.devices__right-item:not(.animate)').each(function () {
 				if (check_is_in_view(this)) {
@@ -157,15 +157,15 @@ $(function () {
 	});
 
 	// Pricing button
-	if (jQuery('.pricing').length) {
-		jQuery('.pricing__switcher-btn').on('click', function () {
-			jQuery(this).toggleClass('active');
-			jQuery('.pricing__plan').toggleClass('is-hide');
+	if ($('.pricing').length) {
+		$('.pricing__switcher-btn').on('click', function () {
+			$(this).toggleClass('active');
+			$('.pricing__plan').toggleClass('is-hide');
 		});
 	}
 
 	// Pricing page slider
-	if (jQuery('.pricing__plans').length) {
+	if ($('.pricing__plans').length) {
 		const swiper1 = new Swiper('.pricing__yearly',
 			{
 				loop: true,
@@ -179,19 +179,19 @@ $(function () {
 				breakpoints: {
 					450: {
 						slidesPerView: 1.5,
-						spaceBetween: 15,
+						spaceBetween: 10,
 					},
 					600: {
 						slidesPerView: 2,
-						spaceBetween: 30,
+						spaceBetween: 15,
 					},
 					900: {
 						slidesPerView: 3,
-						spaceBetween: 40,
+						spaceBetween: 20,
 					},
 					1450: {
 						slidesPerView: 4,
-						spaceBetween: 50,
+						spaceBetween: 30,
 						slidesPerGroup: 2,
 					},
 				},
@@ -204,7 +204,25 @@ $(function () {
 	}
 
 	// Passwords show
-	if (jQuery('.sign-popup').length) {
+	if ($('.sign-popup').length) {
+
+		function onChange() {
+			let pass_input = $('.sign-popup__password-input');
+			let pass_text = $(this).val();
+			let pass_show = $('.sigh-popup__show-password');
+			let $this = $(this);
+
+			if (pass_text.length) {
+				$this.next(pass_show).addClass('is-show');
+			}
+			else {
+				$this.next(pass_show).removeClass('is-show');
+			}
+		}
+
+		$('.sign-popup__password-input').on('input', onChange);
+
+		// Buttons show passwords
 		$('body').on('click', '.sigh-popup__password-control1', function () {
 			if ($('#password-input1').attr('type') == 'password') {
 				$('#password-input1').attr('type', 'text');
@@ -216,18 +234,25 @@ $(function () {
 
 		$('body').on('click', '.sigh-popup__password-control2', function () {
 			if ($('#password-input2').attr('type') == 'password') {
-				$(this).addClass('view');
 				$('#password-input2').attr('type', 'text');
 			} else {
-				$(this).removeClass('view');
 				$('#password-input2').attr('type', 'password');
+			}
+			return false;
+		});
+
+		$('body').on('click', '.sigh-popup__password-control3', function () {
+			if ($('#password-input3').attr('type') == 'password') {
+				$('#password-input3').attr('type', 'text');
+			} else {
+				$('#password-input3').attr('type', 'password');
 			}
 			return false;
 		});
 	}
 
 	// Validate email input
-	if (jQuery('.sign-popup').length) {
+	if ($('.sign-popup').length) {
 		function validateEmail(email) {
 			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			return re.test(email);
@@ -250,32 +275,32 @@ $(function () {
 			return false;
 		}
 
-		jQuery('#email-input').on('input', validate);
+		$('#email-input').on('input', validate);
 	}
 
 	// Login popups show
-	if (jQuery('.header__top').length) {
+	if ($('.header__top').length) {
 
-		jQuery('.sign-popup__close').on('click', function () {
-			jQuery('.sign-popup').removeClass('is-show');
+		$('.sign-popup__close').on('click', function () {
+			$('.sign-popup').removeClass('is-show');
 		});
 
-		jQuery('.header__sign-button').on('click', function () {
-			jQuery('.register-popup').addClass('is-show');
+		$('.header__sign-button').on('click', function () {
+			$('.register-popup').addClass('is-show');
 		});
 
-		jQuery('.header__login-button').on('click', function () {
-			jQuery('.login-popup').addClass('is-show');
+		$('.header__login-button').on('click', function () {
+			$('.login-popup').addClass('is-show');
 		});
 
-		jQuery('.sign-popup__register-btn').on('click', function () {
-			jQuery('.login-popup').removeClass('is-show');
-			jQuery('.register-popup').addClass('is-show');
+		$('.sign-popup__register-btn').on('click', function () {
+			$('.login-popup').removeClass('is-show');
+			$('.register-popup').addClass('is-show');
 		});
 
-		jQuery('.sign-popup__login-btn').on('click', function () {
-			jQuery('.register-popup').removeClass('is-show');
-			jQuery('.login-popup').addClass('is-show');
+		$('.sign-popup__login-btn').on('click', function () {
+			$('.register-popup').removeClass('is-show');
+			$('.login-popup').addClass('is-show');
 		});
 	}
 });

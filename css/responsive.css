@@ -128,7 +128,7 @@
 
 @media only screen and (max-width: 1025px) {
   .tablet-show {
-    opacity: .99;
+    opacity: 1;
     transform: translateY(0%);
     position: relative;
     z-index: 1;

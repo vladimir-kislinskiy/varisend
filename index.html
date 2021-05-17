@@ -918,7 +918,13 @@
 				</div>
 				<form class="sign-popup__form" action="#">
 					<input type="text" placeholder="Your Email">
-					<input type="text" placeholder="Password">
+					<label class="sign-popup__password-wrap">
+						<input class="sign-popup__password-input" type="password" id="password-input3"
+							placeholder="Password" name="password" autocomplete="off">
+						<span class="sigh-popup__password-control3 sign-popup__show-password">
+							<img src="images/icons/password-icon.svg" alt="password show icon">
+						</span>
+					</label>
 					<span class="sign-popup__form-inner">
 						<label class="sign-popup__label">
 							<input class="check-box" type="checkbox">
@@ -936,7 +942,6 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="sign-popup register-popup">
 		<div class="sign-popup__inner">
 			<div class="sign-popup__close">
@@ -952,16 +957,16 @@
 					<input type="text" id='email-input' placeholder="Email">
 					<span class="sign-popup__input-result" id='result'></span>
 					<label class="sign-popup__password-wrap">
-						<input type="password" id="password-input1" placeholder="Password" name="password"
-							autocomplete="off">
-						<span class="sigh-popup__password-control1">
+						<input class="sign-popup__password-input" type="password" id="password-input1"
+							placeholder="Password" name="password" autocomplete="off">
+						<span class="sigh-popup__password-control1 sign-popup__show-password">
 							<img src="images/icons/password-icon.svg" alt="password show icon">
 						</span>
 					</label>
 					<label class="sign-popup__password-wrap">
-						<input type="password" id="password-input2" placeholder="Confilm Password" name="confirmp"
-							autocomplete="off">
-						<span class="sigh-popup__password-control2">
+						<input class="sign-popup__password-input" type="password" id="password-input2"
+							placeholder="Confilm Password" name="confirmp" autocomplete="off">
+						<span class="sigh-popup__password-control2 sign-popup__show-password">
 							<img src="images/icons/password-icon.svg" alt="password show icon">
 						</span>
 					</label>
