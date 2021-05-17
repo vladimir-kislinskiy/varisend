@@ -170,7 +170,7 @@ $(function () {
 			{
 				loop: true,
 				slidesPerView: 1,
-				spaceBetween: 15,
+				spaceBetween: 10,
 				pagination: {
 					el: '.swiper-pagination1',
 					clickable: true,
