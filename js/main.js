@@ -170,7 +170,7 @@ $(function () {
 			{
 				loop: true,
 				slidesPerView: 1,
-				spaceBetween: 15,
+				spaceBetween: 10,
 				pagination: {
 					el: '.swiper-pagination1',
 					clickable: true,
@@ -179,19 +179,19 @@ $(function () {
 				breakpoints: {
 					450: {
 						slidesPerView: 1.5,
-						spaceBetween: 15,
+						spaceBetween: 10,
 					},
 					600: {
 						slidesPerView: 2,
-						spaceBetween: 30,
+						spaceBetween: 15,
 					},
 					900: {
 						slidesPerView: 3,
-						spaceBetween: 40,
+						spaceBetween: 20,
 					},
 					1450: {
 						slidesPerView: 4,
-						spaceBetween: 50,
+						spaceBetween: 30,
 						slidesPerGroup: 2,
 					},
 				},
