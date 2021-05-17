@@ -283,7 +283,7 @@
     border-radius: 0 50px;
   }
   .header__right-item:nth-child(6) {
-    padding: 95px 0;
+    border-radius: 95px 0;
   }
   .header__right-item:nth-child(8) {
     border-radius: 0 60px 0 0;
@@ -319,9 +319,6 @@
   }
   .sign-popup__form-wrap {
     padding: 30px 30px 0;
-  }
-  .sign-popup__bottom {
-    padding: 25px 30px 16px 30px;
   }
 }
 

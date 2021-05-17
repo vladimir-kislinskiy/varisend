@@ -2,6 +2,66 @@
 $(function () {
 	'use strict';
 
+	// Slider suitable
+	if ($('.suitable__slider').length) {
+		const swiper = new Swiper('.suitable__slider-container', {
+			loop: true,
+			spaceBetween: 30,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+				},
+				480: {
+					slidesPerView: 2,
+				},
+				1150: {
+					slidesPerView: 3,
+				},
+				1500: {
+					slidesPerView: 4,
+				}
+			}
+		});
+	}
+
+	// Pricing page slider
+	if ($('.pricing__plans').length) {
+		const swiper1 = new Swiper('.pricing__yearly',
+			{
+				loop: true,
+				slidesPerView: 1,
+				spaceBetween: 30,
+				pagination: {
+					el: '.swiper-pagination1',
+					clickable: true,
+				},
+				breakpoints: {
+					450: {
+						slidesPerView: 1.5,
+					},
+					600: {
+						slidesPerView: 2,
+					},
+					900: {
+						slidesPerView: 3,
+					},
+					1450: {
+						slidesPerView: 4,
+						slidesPerGroup: 2,
+					},
+				},
+
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				},
+			});
+	}
+
 	// Sticky header
 	$(window).on('scroll', function () {
 
@@ -69,49 +129,10 @@ $(function () {
 		}
 	});
 
-	// Slider
-	if ($('.suitable__slider').length) {
-		let swiper = new Swiper('.suitable__slider-container', {
-			loop: true,
-			// centeredSlides: true,
-			spaceBetween: 30,
-			pagination: {
-				el: '.swiper-pagination',
-				clickable: true,
-			},
-			// Responsive breakpoints
-			breakpoints: {
-				// when window width is >= 320px
-				320: {
-					slidesPerView: 1,
-					spaceBetween: 20
-				},
-				// when window width is >= 480px
-				480: {
-					slidesPerView: 2,
-					spaceBetween: 30
-				},
-				// when window width is >= 480px
-				1150: {
-					slidesPerView: 3,
-					spaceBetween: 30
-				},
-				// when window width is >= 640px
-				1500: {
-					// centeredSlides: false,
-					slidesPerView: 4,
-					spaceBetween: 40
-				}
-			}
-		});
-	}
-
 	// Animate objects on load
-	if ($('.header__main').length) {
-		$(window).on('load', function () {
-			$('.header__right-item').addClass('animate');
-		});
-	}
+	$(window).on('load', function () {
+		$('.header__right-item').addClass('animate');
+	});
 
 	// Animate objects on scroll
 	function check_is_in_view(this_el) {
@@ -164,45 +185,6 @@ $(function () {
 		});
 	}
 
-	// Pricing page slider
-	if ($('.pricing__plans').length) {
-		const swiper1 = new Swiper('.pricing__yearly',
-			{
-				loop: true,
-				slidesPerView: 1,
-				spaceBetween: 15,
-				pagination: {
-					el: '.swiper-pagination1',
-					clickable: true,
-				},
-
-				breakpoints: {
-					450: {
-						slidesPerView: 1.5,
-						spaceBetween: 10,
-					},
-					600: {
-						slidesPerView: 2,
-						spaceBetween: 15,
-					},
-					900: {
-						slidesPerView: 3,
-						spaceBetween: 20,
-					},
-					1450: {
-						slidesPerView: 4,
-						spaceBetween: 30,
-						slidesPerGroup: 2,
-					},
-				},
-
-				navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				},
-			});
-	}
-
 	// Passwords show
 	if ($('.sign-popup').length) {
 
@@ -249,11 +231,8 @@ $(function () {
 			}
 			return false;
 		});
-	}
 
-	// Validate email input
-	if ($('.sign-popup').length) {
-
+		// Validate email input
 		function validateEmail(email) {
 			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			return re.test(email);
@@ -281,6 +260,12 @@ $(function () {
 		$('.email-input').on('input', validate);
 	}
 
+
+
+
+
+
+
 	// Login popups show
 	if ($('.header__top').length) {
 
@@ -306,5 +291,6 @@ $(function () {
 			$('.login-popup').addClass('is-show');
 		});
 	}
+
 });
 
