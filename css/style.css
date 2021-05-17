@@ -482,39 +482,6 @@ h2 {
   border-color: #ccc;
 }
 
-.header-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
-  grid-template-rows: max-content 1fr max-content;
-  align-items: center;
-  opacity: 0;
-  z-index: 99;
-  pointer-events: none;
-  transition: opacity .5s;
-}
-
-.header-popup.is-show {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.header-popup__top {
-  padding: 25px 15px 0;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr -webkit-max-content;
-  grid-template-columns: 1fr max-content;
-  grid-template-rows: auto;
-  align-items: center;
-}
-
 .header {
   background-image: url(../images/header/header-bg.jpg);
   background-repeat: no-repeat;
@@ -2170,11 +2137,6 @@ h2 {
   background-color: #F8931F;
 }
 
-.pricing__item-popular a {
-  color: #0D1118;
-  background-color: #fff !important;
-}
-
 .pricing__item-popular::after {
   position: absolute;
   content: 'popular';
@@ -2192,6 +2154,11 @@ h2 {
   top: 5%;
   right: -35%;
   transform: rotate(45deg);
+}
+
+.pricing a.pricing__popular-btn {
+  color: #0D1118;
+  background-color: #fff;
 }
 
 .pricing__item-title {
@@ -2316,7 +2283,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../images/popup-bg.png);
+  background-image: url(../images/header/header-bg.jpg);
   background-size: cover;
   background-position: center center;
   align-items: center;
@@ -2571,4 +2538,37 @@ h2 {
 .sign-popup__show-password.is-show {
   opacity: 1;
   pointer-events: all;
+}
+
+.header-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+  grid-template-rows: max-content 1fr max-content;
+  align-items: center;
+  opacity: 0;
+  z-index: 99;
+  pointer-events: none;
+  transition: opacity .5s;
+}
+
+.header-popup.is-show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.header-popup__top {
+  padding: 25px 15px 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: auto;
+  align-items: center;
 }
