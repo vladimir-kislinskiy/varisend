@@ -267,133 +267,135 @@
 
 	<!-- Sign popups -->
 	<div class="sign-popup login-popup">
-		<div class="sign-popup__inner">
-			<div class="sign-popup__close">
-				<div class="sign-popup__close-img"></div>
+	<div class="sign-popup__inner">
+		<div class="sign-popup__close">
+			<div class="sign-popup__close-img"></div>
+		</div>
+		<div class="sign-popup__form-wrap">
+			<div class="sign-popup__logo">
+				<img src="images/icons/logo.svg" alt="logo icon">
+				<span>Login</span>
 			</div>
-			<div class="sign-popup__form-wrap">
-				<div class="sign-popup__logo">
-					<img src="images/icons/popup-logo.svg" alt="logo icon">
-					<span>Varisend Login</span>
-				</div>
-				<form class="sign-popup__form" action="#">
-					<input type="text" class="email-input" placeholder="Your Email">
-					<span class="sign-popup__input-result"></span>
-					<label class="sign-popup__password-wrap">
-						<input class="sign-popup__password-input" type="password" id="password-input3"
-							placeholder="Password" name="password" autocomplete="off">
-						<span class="sigh-popup__password-control3 sign-popup__show-password">
-							<img src="images/icons/password-icon.svg" alt="password show icon">
-						</span>
-					</label>
-					<span class="sign-popup__form-inner">
-						<label class="sign-popup__label">
-							<input class="check-box" type="checkbox">
-							<span class="check-style"></span>
-							<span>Keep me logged in</span>
-						</label>
-						<a href="#">Forgot your password?</a>
+			<form class="sign-popup__form" action="#">
+				<input type="text" class="email-input" placeholder="Your Email">
+				<span class="sign-popup__input-result"></span>
+				<label class="sign-popup__password-wrap">
+					<input class="sign-popup__password-input" type="password" id="password-input3"
+						placeholder="Password" name="password" autocomplete="off">
+					<span class="sigh-popup__password-control3 sign-popup__show-password">
+						<img src="images/icons/password-icon.svg" alt="password show icon">
 					</span>
-					<label class="sign-popup__btn-wrap">
-						<input type="submit" value="Login Now">
-					</label>
-				</form>
-			</div>
-			<div class="sign-popup__bottom">
-				<span>Not a member yet? </span>
-				<a class="sign-popup__register-btn" href="#">Register now</a>
-			</div>
-		</div>
-	</div>
+				</label>
 
-	<div class="sign-popup register-popup">
-		<div class="sign-popup__inner">
-			<div class="sign-popup__close">
-				<div class="sign-popup__close-img"></div>
-			</div>
-			<div class="sign-popup__form-wrap">
-				<div class="sign-popup__logo">
-					<img src="images/icons/popup-logo.svg" alt="logo icon">
-					<span>Varisend Registration</span>
-				</div>
-				<form class="sign-popup__form" action="#">
-					<input type="text" placeholder="Username" required>
-					<input type="text" class="email-input" placeholder="Email">
-					<span class="sign-popup__input-result"></span>
-					<label class="sign-popup__password-wrap">
-						<input class="sign-popup__password-input" type="password" id="password-input1"
-							placeholder="Password" name="password" autocomplete="off">
-						<span class="sigh-popup__password-control1 sign-popup__show-password">
-							<img src="images/icons/password-icon.svg" alt="password show icon">
-						</span>
+				<span class="sign-popup__form-inner">
+					<label class="sign-popup__label">
+						<input class="check-box" type="checkbox">
+						<span class="check-style"></span>
+						Keep me logged in
 					</label>
-					<label class="sign-popup__password-wrap">
-						<input class="sign-popup__password-input" type="password" id="password-input2"
-							placeholder="Confilm Password" name="confirmp" autocomplete="off">
-						<span class="sigh-popup__password-control2 sign-popup__show-password">
-							<img src="images/icons/password-icon.svg" alt="password show icon">
-						</span>
-					</label>
-					<label class="sign-popup__btn-wrap sign-popup__register">
-						<input type="submit" value="Register Now">
-					</label>
-				</form>
-			</div>
-			<div class="sign-popup__bottom">
-				<span>Are you a member?</span>
-				<a class="sign-popup__login-btn" href="#">Login now</a>
-			</div>
+					<a href="#">Forgot your password?</a>
+				</span>
+
+				<label class="sign-popup__btn-wrap">
+					<input type="submit" value="Login Now">
+				</label>
+			</form>
+		</div>
+		<div class="sign-popup__bottom">
+			<span>Not a member yet? </span>
+			<a class="sign-popup__register-btn" href="#">Register now</a>
 		</div>
 	</div>
+</div>
+	
+	<div class="sign-popup register-popup">
+	<div class="sign-popup__inner">
+		<div class="sign-popup__close">
+			<div class="sign-popup__close-img"></div>
+		</div>
+		<div class="sign-popup__form-wrap">
+			<div class="sign-popup__logo">
+				<img src="images/icons/logo.svg" alt="logo icon">
+				<span>Registration</span>
+			</div>
+			<form class="sign-popup__form" action="#">
+				<input type="text" placeholder="Username" required>
+				<input type="text" class="email-input" placeholder="Email">
+				<span class="sign-popup__input-result"></span>
+				<label class="sign-popup__password-wrap">
+					<input class="sign-popup__password-input" type="password" id="password-input1"
+						placeholder="Password" name="password" autocomplete="off">
+					<span class="sigh-popup__password-control1 sign-popup__show-password">
+						<img src="images/icons/password-icon.svg" alt="password show icon">
+					</span>
+				</label>
+				<label class="sign-popup__password-wrap">
+					<input class="sign-popup__password-input" type="password" id="password-input2"
+						placeholder="Confilm Password" name="confirmp" autocomplete="off">
+					<span class="sigh-popup__password-control2 sign-popup__show-password">
+						<img src="images/icons/password-icon.svg" alt="password show icon">
+					</span>
+				</label>
+				<label class="sign-popup__btn-wrap sign-popup__register">
+					<input type="submit" value="Register Now">
+				</label>
+			</form>
+		</div>
+		<div class="sign-popup__bottom">
+			<span>Are you a member?</span>
+			<a class="sign-popup__login-btn" href="#">Login now</a>
+		</div>
+	</div>
+</div>
 
 	<!-- Header popup -->
 	<div class="header-popup">
-		<div class="header-popup__top">
-			<div class="header__logo">
-				<a href="index.html">
-					<img src="images/icons/logo.svg" alt="logo icon">
-				</a>
-			</div>
-			<div class="header__burger-wrap">
-				<div class="header__burger-inner">
-					<div class="header__menu-toggle">
-						<div class="header__burger">
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
-						<div class="header__cross">
-							<span></span>
-							<span></span>
-						</div>
-					</div>
-					<a class="header__burger-menu" href="#">Menu</a>
-					<a class="header__burger-close is-hide" href="#">Close</a>
-				</div>
-			</div>
+	<div class="header-popup__top">
+		<div class="header__logo">
+			<a href="index.html">
+				<img src="images/icons/logo.svg" alt="logo icon">
+			</a>
 		</div>
-		<nav class="header__menu">
-			<ul class="header__menu-list">
-				<li class="header__menu-item">
-					<a href="index.html">Home</a>
-				</li>
-				<li class="header__menu-item">
-					<a href="index.html#products">Products</a>
-				</li>
-				<li class="header__menu-item">
-					<a href="index.html#plugins">Platform</a>
-				</li>
-				<li class="header__menu-item">
-					<a href="#">Contact Us</a>
-				</li>
-			</ul>
-		</nav>
-		<div class="header__buttons">
-			<a class="header__sign-button" href="#">Sign
-				Up</a>
-			<a class="header__login-button" href="#">Login</a>
+		<div class="header__burger-wrap">
+			<div class="header__burger-inner">
+				<div class="header__menu-toggle">
+					<div class="header__burger">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="header__cross">
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<a class="header__burger-menu" href="#">Menu</a>
+				<a class="header__burger-close is-hide" href="#">Close</a>
+			</div>
 		</div>
 	</div>
+	<nav class="header__menu">
+		<ul class="header__menu-list">
+			<li class="header__menu-item">
+				<a href="index.html">Home</a>
+			</li>
+			<li class="header__menu-item">
+				<a href="#products">Products</a>
+			</li>
+			<li class="header__menu-item">
+				<a href="#plugins">Platform</a>
+			</li>
+			<li class="header__menu-item">
+				<a href="#">Contact Us</a>
+			</li>
+		</ul>
+	</nav>
+	<div class="header__buttons">
+		<a class="header__sign-button" href="#">Sign
+			Up</a>
+		<a class="header__login-button" href="#">Login</a>
+	</div>
+</div>
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/main.js"></script>

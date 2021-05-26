@@ -367,6 +367,9 @@
   .arrow-down {
     margin-top: 30px;
   }
+  .sign-popup__logo img {
+    max-width: 150px;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -435,13 +438,13 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .sign-popup__label {
-    align-self: flex-start;
-  }
   .pricing__inner p {
     margin-bottom: 30px;
   }
   .header__menu-list {
     grid-row-gap: 30px;
+  }
+  .sign-popup__label {
+    margin-bottom: 15px;
   }
 }
