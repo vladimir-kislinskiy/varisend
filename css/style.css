@@ -168,7 +168,7 @@ th {
   font-weight: inherit;
 }
 
-body {
+body, .sign-popup__label {
   font-family: 'DMSans-Regular', sans-serif;
   font-weight: 400;
 }

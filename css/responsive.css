@@ -65,6 +65,9 @@
   .sign-popup__label {
     margin-bottom: 15px;
   }
+  .sign-popup__form input[type='submit'] {
+    padding: 10px;
+  }
 }
 
 @media only screen and (max-height: 700px) {
@@ -446,5 +449,8 @@
   }
   .sign-popup__label {
     margin-bottom: 15px;
+  }
+  .sign-popup__form input[type='submit'] {
+    padding: 10px;
   }
 }
