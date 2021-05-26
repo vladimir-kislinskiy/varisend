@@ -367,6 +367,9 @@
   .arrow-down {
     margin-top: 30px;
   }
+  .sign-popup__logo img {
+		max-width: 150px;
+	}
 }
 
 @media only screen and (max-width: 500px) {
