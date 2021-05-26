@@ -449,38 +449,35 @@ h2 {
 }
 
 .check-box {
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
+  position: absolute;
+  z-index: -1;
   opacity: 0;
 }
 
 .check-style {
-  position: absolute;
-  left: 0;
+  position: relative;
   width: 22px;
   height: 22px;
-  cursor: pointer;
   border: 1px solid #E6E6E6;
   border-radius: 6px;
-  margin-right: 9px;
 }
 
-.check-box:checked + .check-style::before {
+.check-style::before {
+  position: absolute;
   content: "";
+  background-color: transparent;
+  transition: background-color .1s, transform .2s;
   width: 14px;
   height: 14px;
-  position: absolute;
-  background-color: #F15B29;
   top: 50%;
   left: 50%;
   border-radius: 4px;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0);
 }
 
-.check-box:disabled + .check-style {
-  border-color: #ccc;
+.check-box:checked + .check-style::before {
+  background-color: #F15B29;
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .header {
@@ -2468,11 +2465,14 @@ h2 {
 .sign-popup__label {
   cursor: pointer;
   position: relative;
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: auto;
+  grid-column-gap: 10px;
   letter-spacing: -0.02em;
   color: #99928F;
   align-items: center;
-  padding-left: 32px;
 }
 
 .sign-popup__input-result {
