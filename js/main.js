@@ -234,51 +234,54 @@ $(function () {
 
 		// Validate email input
 		function validateEmail(email) {
-			var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 			return re.test(email);
 		}
 
-		function validate() {
-			var $result = $(this).next($(".sign-popup__input-result"));
-			var email = $(this).val();
-			$result.text("");
+		$('.sign-popup__email-input').on('input', function () {
+			let $result = $(this).nextAll('.sign-popup__input-result');
+			if ($(this).val().length) {
+				let email = $(this).val();
+				$result.text("");
 
-			if (validateEmail(email)) {
-				$result.fadeOut('slow');
-				$result.text(" Is valid ");
-				$result.css("color", "green");
-				$(this).removeClass('is-wrong');
-			} else {
-				$result.fadeIn('slow');
-				$result.text(" Please enter a valid email address ");
-				$result.css("color", "#F15B29");
-				$(this).addClass('is-wrong');
+				if (validateEmail(email)) {
+					$result.fadeOut('slow');
+					// $result.removeClass('is-wrong');
+					$result.text("Is valid");
+					$result.css({ "color": "green" });
+					$(this).removeClass('is-wrong');
+				} else {
+					$result.fadeIn('slow');
+					// $result.addClass('is-wrong');
+					$result.text("Please enter a valid email address");
+					$result.css({ "color": "red" });
+					$(this).addClass('is-wrong');
+				}
+				return false;
 			}
-			return false;
-		}
-
-		$('.email-input').on('input', validate);
+			else {
+				$(this).removeClass('is-wrong');
+				$result.fadeOut('slow');
+			}
+		});
 	}
-
-
-
-
-
-
 
 	// Login popups show
 	if ($('.header__top').length) {
 
 		$('.sign-popup__close').on('click', function () {
 			$('.sign-popup').removeClass('is-show');
+			$('body').removeClass('no-scroll');
 		});
 
 		$('.header__sign-button').on('click', function () {
 			$('.register-popup').addClass('is-show');
+			$('body').addClass('no-scroll');
 		});
 
 		$('.header__login-button').on('click', function () {
 			$('.login-popup').addClass('is-show');
+			$('body').addClass('no-scroll');
 		});
 
 		$('.sign-popup__register-btn').on('click', function () {
@@ -292,5 +295,79 @@ $(function () {
 		});
 	}
 
+	// Login popup inputs
+	if ($('.sign-popup').length) {
+		let input_popup = $('.sign-popup input');
+		let input_val = input_popup.val();
+
+		input_popup.on('input', function () {
+			if ($(this).val() != '') {
+				$(this).addClass('is-full');
+			}
+			else {
+				$(this).removeClass('is-full');
+			}
+		});
+	}
+
+	// Custom select
+	if ($('select').length) {
+
+		function custom_select() {
+			$('select:not(.select-hidden)').each(function () {
+				let $this = $(this), numberOfOptions = $(this).children('option').length;
+
+				$this.wrap('<div class="select"></div>');
+				$this.after('<div class="select-styled"></div>');
+
+				let $styledSelect = $this.next('div.select-styled');
+				$styledSelect.text($this.children('option').eq(0).text());
+
+				if ($this.attr('class')) {
+					$styledSelect.addClass($this.attr('class'));
+				}
+
+				$this.addClass('select-hidden');
+
+				let $list = $('<ul />', {
+					'class': 'select-options'
+				}).insertAfter($styledSelect);
+
+				for (let i = 0; i < numberOfOptions; i++) {
+					$('<li />', {
+						text: $this.children('option').eq(i).text(),
+						rel: $this.children('option').eq(i).val()
+					}).appendTo($list);
+				}
+
+				let $listItems = $list.children('li');
+
+				$styledSelect.on('click', function (e) {
+					e.stopPropagation();
+					$('div.select-styled.active').not(this).each(function () {
+						$(this).removeClass('active').next('ul.select-options').fadeOut();
+					});
+					$(this).toggleClass('active').next('ul.select-options').fadeToggle();
+				});
+
+				$listItems.on('click', function (e) {
+					e.stopPropagation();
+					$styledSelect.text($(this).text()).removeClass('active');
+					$this.val($(this).attr('rel'));
+
+					$this.trigger('change'); // TRIGGER CHANGE EVENT;
+
+					$list.fadeOut();
+				});
+
+				$(document).on('click', function () {
+					$styledSelect.removeClass('active');
+					$list.fadeOut();
+				});
+			});
+		}
+
+		custom_select();
+	}
 });
 
