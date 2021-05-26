@@ -722,8 +722,11 @@
 				<span>Login</span>
 			</div>
 			<form class="sign-popup__form" action="#">
-				<input type="text" class="sign-popup__email-input" placeholder="Your Email">
-				<span class="sign-popup__input-result"></span>
+				<label class="sign-popup__inputs-wrap">
+					<input type="text" class="sign-popup__email-input">
+					<div class="label-text">Your Email</div>
+					<div class="sign-popup__input-result"></div>
+				</label>
 				<label class="sign-popup__password-wrap">
 					<input class="sign-popup__password-input" type="password" id="password-input3"
 						placeholder="Password" name="password" autocomplete="off">
@@ -731,7 +734,6 @@
 						<img src="images/icons/password-icon.svg" alt="password show icon">
 					</span>
 				</label>
-
 				<span class="sign-popup__form-inner">
 					<label class="sign-popup__label">
 						<input class="check-box" type="checkbox">
