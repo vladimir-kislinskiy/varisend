@@ -2360,6 +2360,7 @@ h2 {
 
 .sign-popup__logo img {
   margin-bottom: 8px;
+  max-width: 250px;
 }
 
 .sign-popup__logo span {

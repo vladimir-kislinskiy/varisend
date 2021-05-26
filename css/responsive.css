@@ -53,6 +53,18 @@
   .sign-popup__logo {
     margin-bottom: 10px;
   }
+  .sign-popup__logo img {
+    max-width: 150px;
+  }
+  .sign-popup__inner {
+    max-width: 350px;
+  }
+  .sign-popup__form-inner {
+    flex-direction: column;
+  }
+  .sign-popup__label {
+    margin-bottom: 15px;
+  }
 }
 
 @media only screen and (max-height: 700px) {
