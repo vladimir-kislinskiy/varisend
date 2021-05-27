@@ -331,7 +331,7 @@
     grid-row-gap: 30px;
   }
   .sign-popup__form-wrap {
-    padding: 30px 30px 0;
+    padding: 60px 30px 0;
   }
 }
 
@@ -454,6 +454,6 @@
     padding: 10px;
   }
   .sign-popup__form-wrap {
-    padding: 15px 15px 0 15px;
+    padding: 60px 15px 0 15px;
   }
 }
