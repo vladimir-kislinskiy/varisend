@@ -2398,7 +2398,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 572px;
+  max-width: calc(300px + (572 - 300) * ((100vw - 320px) / (1920 - 320)));
   width: 100%;
   position: relative;
   margin: auto;
@@ -2449,8 +2449,8 @@ h2 {
 }
 
 .sign-popup__logo img {
-  margin-bottom: 40px;
-  max-width: 200px;
+  margin-bottom: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)));
+  max-width: calc(100px + (200 - 100) * ((100vw - 320px) / (1920 - 320)));
 }
 
 .sign-popup__logo span {
@@ -2634,7 +2634,7 @@ h2 {
 
 .sign-popup__bottom {
   padding: 17px 20px 17px 20px;
-  margin-top: 47px;
+  margin-top: calc(20px + (47 - 20) * ((100vw - 320px) / (1920 - 320)));
   border-top: 1px solid #E6E6E6;
   width: 100%;
   font-size: 15px;
